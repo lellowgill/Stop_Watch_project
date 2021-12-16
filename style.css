@@ -1,1 +1,78 @@
 /* StopWatch style and color etc*/
+
+body {
+    background: url("./Assets/hour\ glass.jpeg") no-repeat center center fixed;
+    /*color: rgb(222, 222, 70); */
+    color: #fff;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    flex-shrink: inherit;
+}
+h1 {
+    font-size: 48px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+
+    text-align: center;
+    line-height: 59px;
+
+    padding: 0 64px;
+    margin: 0;
+}
+
+.stopwatch {
+    display: grid;
+    justify-items: center;
+    grid-row-gap: 23px;
+    width: 100%;
+    padding-top: 150px;
+}
+
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 300px;
+    width: 300px;
+
+    border: 5px solid;
+    border-radius: 50%;
+}
+
+.time {
+    font-family: "Roboto Mono",  monospace;
+    font-weight: 300;
+    font-size: 48px;
+}
+.gold {
+    font-weight: 900;
+    color: #f2c94c;
+    text-shadow: 0 0 0px #fff, 0 0 50px #f2c94c;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+
+    width: 187px;
+}
+
+button {
+    cursor: pointer;
+    background: transparent;
+    padding: 0;
+    border: none;
+    margin: 0;
+    outline: none;
+}
+
+#playButton {
+    display: block;
+}
+
+#pauseButton {
+    display:none;
+}
