@@ -3,7 +3,7 @@
 
 function timeToString(time) {
     let diffInHrs = time / 3600000;
-    let hh == Math.floor(diffInHrs);
+    let hh = Math.floor(diffInHrs);
 
     let diffInMin = (diffInHrs - hh) * 60;
     let mm = Math.floor(diffInMin);
