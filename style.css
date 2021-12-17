@@ -10,6 +10,7 @@ body {
     background-size: cover;
     flex-shrink: inherit;
 }
+
 h1 {
     font-size: 48px;
     font-family: 'Montserrat', sans-serif;
