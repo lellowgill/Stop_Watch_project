@@ -22,3 +22,16 @@ function timeToString(time) {
     `${formattedMM}:${formattedSS}:${formattedMS}`;
 
 }
+
+// Declare variables to use in our functions below
+
+let startTime;
+let elapsedTime = 0;
+let timerInterval;
+
+// Create function to modify innerHTML
+
+function print(txt) {
+
+    document.getElementById('display').innerHTML = txt;
+}
