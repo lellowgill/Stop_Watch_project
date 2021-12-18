@@ -33,5 +33,7 @@ let timerInterval;
 
 function print(txt) {
 
-    document.getElementById('display').innerHTML = txt;
+    document.getElementById("display").innerHTML = txt;
 }
+
+//
