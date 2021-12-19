@@ -59,3 +59,26 @@ function reset() {
     showButton("PLAY");
 } 
 
+// Create function to display buttons 
+
+function showButton(buttonKey) {
+    const buttonToShow = buttonKey === "PLAY"  ?
+playButton : pauseButton;
+    const buttonToHide = buttonKey === "PLAY"  ?
+pauseButton : playButton;
+    buttonToShow.style.display = "block";
+    buttonToHide.style.display = "none";    
+}
+
+// Create event listeners
+
+let playButton =
+document.getElementById("playButton");
+let pauseButton =
+document.getElementById("pauseButton");
+let resetButton = 
+document.getElementById("resetButton");
+
+playButton.addEventListener("click", start);
+playButton.addEventListener("click", pause);
+playButton.addEventListener("click", reset);
