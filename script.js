@@ -22,3 +22,40 @@ function timeToString(time) {
     `${formattedMM}:${formattedSS}:${formattedMS}`;
 
 }
+
+// Declare variables to use in our functions below
+
+let startTime;
+let elapsedTime = 0;
+let timerInterval;
+
+// Create function to modify innerHTML
+
+function print(txt) {
+
+    document.getElementById("display").innerHTML = txt;
+}
+
+// Create "start", "pause" and "reset" functions
+
+function start() {
+    startTime = Date.now() - elapsedTime;
+    timerInterval = setInterval(function printTime() {
+        elapsedTime = Date.now() - startTime;
+        print(timeToString(elapsedTime));
+    }, 10);
+    showButton("PAUSE");
+}
+
+function pause() {
+    clearInterval(timerInterval);
+    showButton("PLAY");
+}
+
+function reset() {
+    clearInterval(timerInterval);
+    print("00:00:00");
+    elapsedTime = 0;
+    showButton("PLAY");
+} 
+
