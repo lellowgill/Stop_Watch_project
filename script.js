@@ -11,16 +11,15 @@ function timeToString(time) {
     let diffInSec = (diffInMin - mm) * 60;
     let ss = Math.floor(diffInSec);
 
-    let diffInMs = (diffInMin - mm) * 100;
+    let diffInMs = (diffInMin - ss) * 100;
     let ms = Math.floor(diffInMs);
 
     let formattedMM = mm.toString().padStart(2, "0");
-    let formattedSS = mm.toString().padStart(2, "0");
-    let formattedMS = mm.toString().padStart(2, "0");
+    let formattedSS = ss.toString().padStart(2, "0");
+    let formattedMS = ms.toString().padStart(2, "0");
 
     return 
     `${formattedMM}:${formattedSS}:${formattedMS}`;
-
 }
 
 // Declare variables to use in our functions below
@@ -32,7 +31,6 @@ let timerInterval;
 // Create function to modify innerHTML
 
 function print(txt) {
-
     document.getElementById("display").innerHTML = txt;
 }
 
@@ -62,23 +60,20 @@ function reset() {
 // Create function to display buttons 
 
 function showButton(buttonKey) {
-    const buttonToShow = buttonKey === "PLAY"  ?
-playButton : pauseButton;
-    const buttonToHide = buttonKey === "PLAY"  ?
-pauseButton : playButton;
+    const buttonToShow = buttonKey === "PLAY"  ? playButton : 
+pauseButton;
+    const buttonToHide = buttonKey === "PLAY"  ? pauseButton : 
+playButton;
     buttonToShow.style.display = "block";
     buttonToHide.style.display = "none";    
 }
 
 // Create event listeners
 
-let playButton =
-document.getElementById("playButton");
-let pauseButton =
-document.getElementById("pauseButton");
-let resetButton = 
-document.getElementById("resetButton");
+let playButton = document.getElementById("playButton");
+let pauseButton = document.getElementById("pauseButton");
+let resetButton = document.getElementById("resetButton");
 
 playButton.addEventListener("click", start);
-playButton.addEventListener("click", pause);
-playButton.addEventListener("click", reset);
+pauseButton.addEventListener("click", pause);
+resetButton.addEventListener("click", reset);
