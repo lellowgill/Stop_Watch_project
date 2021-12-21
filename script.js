@@ -45,9 +45,9 @@ function start() {
     showButton("PAUSE");
 }
 
-function pause() {
-    clearInterval(timerInterval);
-    showButton("PLAY");
+    function pause() {
+        clearInterval(timerInterval);
+        showButton("PLAY");
 }
 
 function reset() {
@@ -55,7 +55,16 @@ function reset() {
     print("00:00:00");
     elapsedTime = 0;
     showButton("PLAY");
-} 
+}
+
+  // Create function to display buttons
+
+function showButton(buttonKey) {
+    const buttonToShow = buttonKey === "PLAY" ? playButton : pauseButton;
+    const buttonToHide = buttonKey === "PLAY" ? pauseButton : playButton;
+    buttonToShow.style.display = "block";
+    buttonToHide.style.display = "none";
+}
 
 // Create function to display buttons 
 
